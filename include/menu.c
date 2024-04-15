@@ -36,3 +36,9 @@ int transactionMenu()
     char *options[] = {"Send money", "Deposit money", "Back"};
     return showMenu(3, options);
 }
+
+int currencyMenu()
+{
+    char *options[] = {"RON", "EUR", "USD", "Cancel"};
+    return showMenu(4, options);
+}

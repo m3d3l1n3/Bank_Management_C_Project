@@ -29,7 +29,27 @@ int main(int argc, char **argv)
                     int accountRes;
                     while ((accountRes = accountsMenu()) != 5)
                     {
-                        //
+                        if (accountRes == 1)
+                        {
+                            int currency = currencyMenu();
+                            switch (currency)
+                            {
+                            case 1:
+                                createAccount(currentUser, dataPath, "RON");
+                                break;
+
+                            case 2:
+                                createAccount(currentUser, dataPath, "EUR");
+                                break;
+
+                            case 3:
+                                createAccount(currentUser, dataPath, "USD");
+                                break;
+
+                            default:
+                                break;
+                            }
+                        }
                     }
                 }
                 if (mainRes == 2)
