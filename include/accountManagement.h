@@ -1,7 +1,5 @@
 #ifndef ACCOUNTMANAGEMENT
 #define ACCOUNTMANAGEMENT
 #include "structUser.h"
-
-char loginUser(User user, char *dataPath);
-char registerUser(User user, char *dataPath);
+char createAccount(User currentUser, char *dataPath, char *currency);
 #endif
