@@ -18,10 +18,10 @@ char updateDestinationFile(char* dataPath, char* destinationIBAN, char* amount) 
     strcpy(wildCard, dataPath);
     strcat(wildCard, prefix);
     strcat(wildCard, "*.csv");
-    printf("%s\n", wildCard);
+    /// printf("%s\n", wildCard);
     if ((hFind = FindFirstFile(wildCard, &FindFileData)) != INVALID_HANDLE_VALUE) {
         do {
-            printf("%s\n", FindFileData.cFileName);
+            // printf("%s\n", FindFileData.cFileName);
             char* userPath = malloc(strlen(dataPath) + strlen(prefix) + strlen(FindFileData.cFileName));
             strcpy(userPath, dataPath);
             strcat(userPath, prefix);
@@ -64,9 +64,10 @@ char updateDestinationFile(char* dataPath, char* destinationIBAN, char* amount) 
 
 char sendMoney(User currentUser, char* dataPath, char* sourceIBAN, char* destinationIBAN, char* amount) {
     char* userPath = getUserPath(currentUser, dataPath);
-    if (editAccount(currentUser, dataPath, sourceIBAN, 4, amount) == 0)
+    int editRes = editAccount(currentUser, dataPath, sourceIBAN, 4, amount);
+    if (editRes == 0)
         return 0;
-    else if (editAccount(currentUser, dataPath, sourceIBAN, 4, amount) == 1) {
+    else if (editRes == 1) {
         if (updateDestinationFile(dataPath, destinationIBAN, amount))
             return 1;
     }

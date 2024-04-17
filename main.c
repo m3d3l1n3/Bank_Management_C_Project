@@ -37,7 +37,7 @@ int main(int argc, char** argv)
                         if (accountRes == 1)
                         {
                             int currency = currencyMenu();
-                            int resCreateAccount;
+                            int resCreateAccount = 0;
                             switch (currency)
                             {
                             case 1:
@@ -57,7 +57,7 @@ int main(int argc, char** argv)
                             }
                             if (resCreateAccount) {
                                 printf("Account created.\n");
-                                // awaitInput();
+                                awaitInput();
                             }
                         }
                         if (accountRes == 2) {
@@ -72,11 +72,13 @@ int main(int argc, char** argv)
                             if (editAccount(currentUser, dataPath, IBAN, editRes, newData))
                                 printf("Account updated.\n");
                             else printf("Update failed.\n");
+                            awaitInput();
                             //printf("dsahsus");
                         }
                         if (accountRes == 3)
                         {
                             showAccounts(currentUser, dataPath);
+                            awaitInput();
                         }
                         if (accountRes == 4) {
                             showAccounts(currentUser, dataPath);
@@ -85,6 +87,7 @@ int main(int argc, char** argv)
                             scanf("%s", IBAN);
                             deleteAccount(currentUser, dataPath, IBAN);
                             printf("Delete succesful.\n");
+                            awaitInput();
                         }
                     }
                 }
@@ -108,6 +111,7 @@ int main(int argc, char** argv)
                                 printf("Transfer completed.\n");
                             else
                                 printf("Transfer failed.\n");
+                            awaitInput();
                         }
                         if (transactionRes == 2) {
 
@@ -121,6 +125,7 @@ int main(int argc, char** argv)
                             if (depositMoney(currentUser, dataPath, IBAN, sum))
                                 printf("Succesful deposit.\n");
                             else printf("The deposit failed.\n");
+                            awaitInput();
                         }
 
                     }

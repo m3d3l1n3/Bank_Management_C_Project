@@ -3,18 +3,18 @@
 #include "menu.h"
 #include <stdio.h>
 #include <Windows.h>
+#include <conio.h>
+
 
 void awaitInput() {
-    char* buffer = malloc(50);
     printf("Press enter to continue...");
-    scanf("%s", buffer);
-    free(buffer);
+    _getch();
     return;
 }
 
 int showMenu(int length, char** options)
 {
-    //system("cls");
+    system("cls");
     for (int i = 0; i < length; i++)
         printf("%d. %s\n", i + 1, options[i]);
     printf("Please select an option: ");
