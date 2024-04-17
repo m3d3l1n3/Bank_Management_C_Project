@@ -3,10 +3,16 @@
 
 typedef struct user
 {
-    char *name;
-    char *surname;
+    char* name;
+    char* surname;
 } User;
-
-User initialiseUser(char *name, char *surname);
+/**
+ * @brief Initialises a User instance
+ *
+ * @param name
+ * @param surname
+ * @return User
+ */
+User initialiseUser(char* name, char* surname);
 
 #endif

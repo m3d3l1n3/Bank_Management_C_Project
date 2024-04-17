@@ -1,5 +1,6 @@
 {
 	"files.associations": {
-		"accountmanagement.h": "c"
+		"accountmanagement.h": "c",
+		"usermanagement.h": "c"
 	}
 }

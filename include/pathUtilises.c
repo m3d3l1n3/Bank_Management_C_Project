@@ -1,13 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS
+
 #include "pathUtilises.h"
 #include <string.h>
 #include <stdlib.h>
 
-char *getDataPath(char *executablePath)
+char* getDataPath(char* executablePath)
 {
-    char *filePath = malloc(strlen(executablePath) + 5);
+    char* filePath = malloc(strlen(executablePath) + 5);
     strcpy(filePath, "\0");
-    char *tmp = strtok(executablePath, "\\");
+    char* tmp = strtok(executablePath, "\\");
     while (tmp)
     {
         if (strstr(tmp, ".exe") == NULL)
